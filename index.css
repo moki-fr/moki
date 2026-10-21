@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+@keyframes easeOutScale {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.5); }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);  /* commence 30px plus bas */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fadeIn {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: backwards;
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+body{
+    background-color: #F0ECE6;
+    margin: 0;
+   	cursor: url('some-cursor.ico'), default;
+
+}
+
+.mainBlock {
+    background-color: #F0ECE6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 0;
+}
+
+.mainBlock *{
+    margin: 0.7vh;
+}
+
+.mainBlock h1{
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 41px;
+}
+
+.mainBlock img{
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.mainBlock img:hover {
+    transform: scale(1.2);
+}
+
+
+
+.imMokiBlock {
+    background-color: #F0ECE6;
+    display: flex;
+
+    height: 100vh;
+}
+
+.imMokiBlock .left{
+    background-color: #F0ECE6;
+    margin-left: 100px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imMokiBlock .right{
+    background-color: #F0ECE6;
+    margin-right: 100px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imMokiBlock h1{
+    font-size: 150px;
+
+    flex: 1;
+    font-family: "Climate Crisis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "YEAR" 1979;
+    padding: 0, 150px;
+    line-height: 122px;
+}
+
+.imMokiBlock p {
+    margin-left: 100px;
+    font-size: 38px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    line-height: 1;
+}
+
+
+
+.spokenLanguagesBlock {
+    background-color: red;
+    height: 100vh;
+}
+
+.codingLanguagesBlock {
+    background-color: blue;
+    height: 100vh;
+}
+
+.softwareBlock {
+    background-color: red;
+    height: 100vh;
+}
+
+.socialsBlock {
+    background-color: blue;
+    height: 100vh;
+}
