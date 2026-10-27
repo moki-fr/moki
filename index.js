@@ -45,3 +45,19 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(element);
     });
 });
+
+
+const follow = document.querySelector("#follow");
+const hint = follow.querySelector("p");
+
+document.querySelectorAll("[data-hint]").forEach(el => {
+    el.addEventListener("mouseenter", () => {
+        hint.textContent = el.dataset.hint;
+        follow.classList.add("has-text");
+    });
+
+    el.addEventListener("mouseleave", () => {
+        hint.textContent = "";
+        follow.classList.remove("has-text");
+    });
+});
