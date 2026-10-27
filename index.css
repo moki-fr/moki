@@ -19,6 +19,15 @@
     }
 }
 
+@keyframes parallax {
+    from {
+        background-position-y: 0px;
+    }
+    to {
+        background-position-y: 50vh;
+    }
+}
+
 .fadeIn {
     animation: fadeInUp 0.6s ease-out;
     animation-fill-mode: backwards;
@@ -29,6 +38,33 @@
 .delay-3 { animation-delay: 0.3s; }
 .delay-4 { animation-delay: 0.4s; }
 .delay-5 { animation-delay: 0.5s; }
+
+.grided {
+    width: 100%;
+    height: 100%;
+
+    background: #F0ECE6;
+    --gap: 5em;
+    --line: 1px;
+    --color: rgba(0, 0, 0, 0.3);
+
+    background-image: linear-gradient(
+        -90deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      ),
+      linear-gradient(
+        0deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      );
+    background-size: var(--gap) var(--gap);
+
+}
+
+
 
 
 #follow {
@@ -50,8 +86,9 @@ body{
     background-color: #F0ECE6;
     margin: 0;
     cursor: url("assets/imgs/Cursor.png"), pointer;
-
+    background-attachment: fixed;
 }
+
 
 h1{
     font-family: "Climate Crisis", sans-serif;
@@ -59,9 +96,12 @@ h1{
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "YEAR" 1979;
-    line-height: 122px;
+
     white-space: nowrap;
+    color: #051014;
 }
+
+/* MAINBLOCK */
 
 .mainBlock {
 
@@ -83,18 +123,30 @@ h1{
     font-weight: bold;
     font-style: normal;
     font-size: 41px;
+    user-select: none;
 }
 
 .mainBlock img{
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: auto;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .mainBlock img:hover {
+    user-select: none;
     transform: scale(1.2);
 }
+.mainBlock img:active {
+    user-select: none;
+    transform: scale(0.92);
+}
+
+/* IM MOKI BLOCK */
 
 .imMokiBlock {
     display: flex;
-
     height: 100vh;
 }
 
@@ -108,7 +160,7 @@ h1{
 }
 
 .imMokiBlock .right {
-    margin-right: 100px;
+    margin-right: 2vw;
     flex: 1;
     min-width: 0;
     display: flex;
@@ -118,9 +170,9 @@ h1{
 
 .imMokiBlock h1 {
 
-    font-size: 150px;
+    font-size: 185px;
     flex: none;
-    color: #051014;
+    line-height: 122px;
     font-family: "Climate Crisis", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -140,18 +192,162 @@ h1{
     color:#051014
 }
 
-
+/* SPOKEN LANGAGES */
 
 .spokenLanguagesBlock {
     background-color: red;
     height: 100vh;
 }
 
+ /* CODING LANGUAGES */
+
 .codingLanguagesBlock {
-    background-color: blue;
     height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
 }
 
+.langLeft {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.appGroup {
+    width: 440px;
+    height: 440px;
+    background-color: #00000030;
+    border-radius: 10%;
+
+    margin-left: 4vw;
+
+    display: grid;
+    grid-template-columns: repeat(2, 185px);
+    grid-template-rows: repeat(2, 185px);
+    gap: 20px;
+
+    justify-content: center;
+    align-content: center;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+.langRight {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.langRight h1 {
+    font-size: 9vw;
+    margin-left: 4vw;
+
+    line-height: 113px;
+}
+
+.langApp {
+    width: 185px;
+    height: 185px;
+    background-color: red;
+    border-radius: 15%;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.langApp:hover {
+    transform: scale(1.05);
+}
+
+#pyIcon {
+    height: 65%;
+}
+
+#rustIcon {
+    height: 75%;
+}
+
+#cppIcon {
+    height: 75%;
+}
+
+#Python {
+    background-color: black;
+}
+#Rust {
+    background: linear-gradient(to bottom, #0B0300, #200900);
+}
+#CPP {
+    background-color: #060D1D;
+}
+
+.miniLangApp {
+    width: 70px;
+    height: 70px;
+    background-color: red;
+    border-radius: 15%;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#miniGroup {
+    background-color: #00000010;
+
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    grid-template-rows: repeat(2, 40%);
+    gap: 10px;
+
+
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+
+}
+
+#HTML {
+    background-color: white;
+}
+#HTML img {
+    height: 51px;
+}
+
+#java {
+    background: linear-gradient(to bottom, #F0F0F0, #FFFFFF)
+}
+#java img {
+    height: 51px
+}
+
+#smali {
+    background-color: #051603;
+}
+#smali img {
+    height: 62px
+}
+
+#asm {
+    background: linear-gradient(to bottom, #010012, #171637)
+}
+#asm img {
+    height: 30%
+}
+
+/* SOFTWARE */
 .softwareBlock {
     background-color: red;
     height: 100vh;

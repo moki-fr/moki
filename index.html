@@ -9,17 +9,19 @@
 	<link rel="stylesheet" href="index.css">
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
-	<script src="index.js"></script>
+
 </head>
-<body>
+<body class="grided">
 
     <div id="follow"></div>
 
+
     <div class="mainBlock">
         <h2  class="fadeIn" >Salut, moi c'est</h2>
-        <img src="assets/imgs/mokilogohover.png", style="height: 10.67%;" class="fadeIn delay-3">
+        <img src="assets/imgs/mokilogohover.png", style="height: 10.67%;" class="fadeIn delay-3" id="moki" alt="Moki" draggable="false">
 
     </div>
+
 
     <div class="imMokiBlock">
         <div class="left">
@@ -37,7 +39,39 @@
         </div> -->
 
     <div class="codingLanguagesBlock">
-        <p>Python Rust C++...</p>
+        <div class="langLeft">
+            <div class="appGroup">
+                <div class="langApp" id="Python" >
+                    <img src="assets/imgs/Py.svg" id="pyIcon">
+                </div>
+                <div class="langApp" id="Rust">
+                    <img src="assets/imgs/rust.svg" id="rustIcon">
+                </div>
+                <div class="langApp" id="CPP">
+                    <img src="assets/imgs/cpp.svg" id="cppIcon">
+                </div>
+                <div class="langApp" id="miniGroup">
+                    <div class="miniLangApp" id="HTML">
+                        <img src="assets/imgs/html.svg">
+                    </div>
+                    <div class="miniLangApp" id="java">
+                        <img src="assets/imgs/java.svg">
+                    </div>
+                    <div class="miniLangApp" id="smali">
+                        <img src="assets/imgs/smali.svg">
+                    </div>
+                    <div class="miniLangApp" id="asm">
+                        <img src="assets/imgs/ASM.svg">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="langRight">
+            <h1>Langages<br>connus</h1>
+        </div>
+
+
     </div>
 
     <div class="softwareBlock">
@@ -47,5 +81,9 @@
     <div class="socialsBlock">
         <p>Insta..</p>
     </div>
+
+
+
+    <script src="index.js"></script>
 </body>
 </html>

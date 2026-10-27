@@ -17,8 +17,8 @@ function animate() {
   circleY += (mouseY - circleY) * ease;
 
   $("#follow").css({
-    left: circleX-25 + "px",
-    top: circleY-25 + "px"
+    left: circleX + "px",
+    top: circleY + "px"
   });
 
   requestAnimationFrame(animate);
