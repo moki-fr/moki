@@ -30,6 +30,11 @@ animate();
 document.addEventListener("DOMContentLoaded", () => {
     const elements = document.querySelectorAll(".fadeIn");
 
+    if (!("IntersectionObserver" in window)) {
+        elements.forEach(element => element.classList.add("visible"));
+        return;
+    }
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -37,9 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.1
-    });
+    }, { threshold: 0.12 });
 
     elements.forEach(element => {
         observer.observe(element);
