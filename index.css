@@ -402,15 +402,199 @@ h1{
     height: 30%
 }
 
-/* SOFTWARE */
+/* LOGICIELS */
 .softwareBlock {
-    background-color: red;
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    padding: 32px;
+    box-sizing: border-box;
 }
 
+.softwarePanel {
+    width: min(730px, 100%);
+    padding: 26px;
+    box-sizing: border-box;
+    border-radius: 37px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.softwareTitle h1,
+.socialsTitle h1 {
+    margin: 0;
+    font-size: clamp(56px, 8vw, 150px);
+    line-height: 0.9;
+}
+
+.softwareTitle,
+.socialsTitle {
+    position: relative;
+    z-index: 1;
+}
+
+.softwareGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(10px, 1.25vw, 20px);
+    align-items: start;
+}
+
+.softwareIcon {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 22%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.softwareIcon:nth-child(6n + 1) { background: #ef6a5b; }
+.softwareIcon:nth-child(6n + 2) { background: #5b8def; }
+.softwareIcon:nth-child(6n + 3) { background: #55b98a; }
+.softwareIcon:nth-child(6n + 4) { background: #f2b84b; }
+.softwareIcon:nth-child(6n + 5) { background: #a579d2; }
+.softwareIcon:nth-child(6n) { background: #e47fac; }
+
+/* RÉSEAUX SOCIAUX */
 .socialsBlock {
-    background-color: blue;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 48px 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+}
+
+.socialNotifications {
+    width: min(739px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.socialNotification {
+    width: 100%;
+    min-height: 126px;
+    padding: 15px 18px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 34px;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 32px rgba(34, 41, 48, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.socialIcon {
+    flex: 0 0 96px;
+    width: 96px;
+    height: 96px;
+    display: grid;
+    place-items: center;
+    border-radius: 22px;
+    color: white;
+    font: 700 58px/1 "Inter", sans-serif;
+}
+
+.instagramIcon { background: linear-gradient(135deg, #793fe0, #e1306c 55%, #ffad45); }
+.githubIcon { background: #171717; }
+.emailIcon { background: #147EFB; font-size: 48px; }
+
+.socialCopy {
+    min-width: 0;
+    flex: 1;
+    font-family: "Inter", sans-serif;
+}
+
+.socialCopy h2 {
+    margin: 0 0 5px;
+    color: #000;
+    font-size: 29px;
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+.socialCopy p {
+    margin: 0;
+    color: #383838;
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.followButton {
+    flex: 0 0 178px;
+    width: 178px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background: #147EFB;
+    color: #fff;
+    font: 600 18px/1 "Inter", sans-serif;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.followButton:hover { background: #0868d8; }
+.followButton:active { transform: scale(0.97); }
+
+@media (max-width: 600px) {
+    .softwareBlock,
+    .socialsBlock {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .softwareBlock { padding: 20px; }
+    .softwarePanel {
+        padding: 18px;
+        border-radius: 28px;
+    }
+
+    .softwareGrid { gap: 10px; }
+    .socialsBlock { padding: 32px 16px; }
+    .socialNotifications { gap: 14px; }
+    .socialNotification {
+        min-height: 106px;
+        padding: 12px;
+        gap: 12px;
+        border-radius: 28px;
+    }
+
+    .socialIcon {
+        flex-basis: 68px;
+        width: 68px;
+        height: 68px;
+        border-radius: 17px;
+        font-size: 42px;
+    }
+
+    .emailIcon { font-size: 36px; }
+    .socialCopy h2 { font-size: clamp(18px, 5vw, 24px); }
+    .socialCopy p { font-size: clamp(15px, 4vw, 18px); }
+    .followButton {
+        flex-basis: 92px;
+        width: 92px;
+        height: 44px;
+        border-radius: 999px;
+        font-size: 14px;
+    }
+
+    .softwareTitle h1,
+    .socialsTitle h1 { font-size: clamp(48px, 12vw, 72px); }
 }
 
 
