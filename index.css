@@ -80,6 +80,42 @@
 
 }
 
+html {
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(5, 16, 20, 0.34) transparent;
+}
+
+html::-webkit-scrollbar {
+    width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    border: 4px solid transparent;
+    border-radius: 999px;
+    background: rgba(5, 16, 20, 0.34);
+    background-clip: padding-box;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: rgba(5, 16, 20, 0.58);
+    background-clip: padding-box;
+}
+
+.mainBlock,
+.imMokiBlock,
+.codingLanguagesBlock,
+.softwareBlock,
+.socialsBlock {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
 
 
 /*
@@ -268,12 +304,6 @@ h1{
     color:#051014
 }
 
-/* SPOKEN LANGAGES */
-
-.spokenLanguagesBlock {
-    background-color: red;
-    height: 100vh;
-}
 
  /* CODING LANGUAGES */
 
@@ -298,6 +328,7 @@ h1{
     height: 440px;
     background-color: #00000030;
     border-radius: 10%;
+    box-shadow: 0 5px 10px rgba(5, 16, 20, 0.12), 0 16px 30px rgba(5, 16, 20, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.16);
 
     margin-left: 4vw;
 
@@ -325,7 +356,7 @@ h1{
     font-size: 9vw;
     margin-left: 4vw;
 
-    line-height: 113px;
+    line-height: 143px;
 }
 
 .langApp {
@@ -416,6 +447,7 @@ h1{
 
 #miniGroup {
     background-color: #00000010;
+    box-shadow: 0 4px 9px rgba(5, 16, 20, 0.1), 0 12px 22px rgba(5, 16, 20, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.16);
 
     display: grid;
     grid-template-columns: repeat(2, 40%);
@@ -478,7 +510,7 @@ h1{
     border-radius: 37px;
     border: 1px solid rgba(255, 255, 255, 0.35);
     background: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 18px 45px rgba(36, 31, 26, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.24);
+    box-shadow: 0 5px 10px rgba(5, 16, 20, 0.12), 0 16px 30px rgba(5, 16, 20, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.16);
     backdrop-filter: blur(10px) saturate(125%);
     -webkit-backdrop-filter: blur(10px) saturate(125%);
     display: flex;
@@ -551,10 +583,20 @@ h1{
     border: 1px solid rgba(255, 255, 255, 0.28);
     border-radius: 48px;
     background: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 14px 36px rgba(34, 41, 48, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    box-shadow: 0 5px 10px rgba(5, 16, 20, 0.12), 0 16px 30px rgba(5, 16, 20, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.16);
     backdrop-filter: blur(12px) saturate(125%);
     -webkit-backdrop-filter: blur(12px) saturate(125%);
+    transition: opacity 450ms ease-out, translate 450ms cubic-bezier(0.2, 0.7, 0.2, 1), transform 220ms ease, box-shadow 220ms ease;
 }
+
+.socialNotification:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 13px rgba(5, 16, 20, 0.15), 0 20px 36px rgba(5, 16, 20, 0.23), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.socialNotification.fadeIn.delay-1 { transition-delay: 80ms, 80ms, 0ms, 0ms; }
+.socialNotification.fadeIn.delay-2 { transition-delay: 150ms, 150ms, 0ms, 0ms; }
+.socialNotification.fadeIn.delay-3 { transition-delay: 220ms, 220ms, 0ms, 0ms; }
 
 .socialIcon {
     flex: 0 0 96px;
