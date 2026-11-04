@@ -290,7 +290,7 @@ h1{
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "YEAR" 1979;
-    line-height: 122px;
+    line-height: 16vh;
     white-space: nowrap;
 }
 
@@ -356,7 +356,7 @@ h1{
     font-size: 9vw;
     margin-left: 4vw;
 
-    line-height: 143px;
+    line-height: 13vh;
 }
 
 .langApp {
@@ -491,7 +491,7 @@ h1{
     height: 30%
 }
 
-/* LOGICIELS */
+/* SOFTWARE */
 .softwareBlock {
     min-height: 100vh;
     display: flex;
