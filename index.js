@@ -1,30 +1,30 @@
-let mouseX = 0;
-let mouseY = 0;
+if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    let mouseX = 0;
+    let mouseY = 0;
+    let circleX = 0;
+    let circleY = 0;
 
-let circleX = 0;
-let circleY = 0;
+    $(document).mousemove(function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
 
-$(document).mousemove(function(e) {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
+    function animate() {
+        const ease = 0.2;
 
-function animate() {
-  // Plus la valeur est faible, plus le retard est important
-  const ease = 0.2;
+        circleX += (mouseX - circleX) * ease;
+        circleY += (mouseY - circleY) * ease;
 
-  circleX += (mouseX - circleX) * ease;
-  circleY += (mouseY - circleY) * ease;
+        $("#follow").css({
+            left: circleX + "px",
+            top: circleY + "px"
+        });
 
-  $("#follow").css({
-    left: circleX + "px",
-    top: circleY + "px"
-  });
+        requestAnimationFrame(animate);
+    }
 
-  requestAnimationFrame(animate);
+    animate();
 }
-
-animate();
 
 
 document.addEventListener("DOMContentLoaded", () => {
