@@ -553,16 +553,29 @@ h1{
 .softwareIcon {
     width: 100%;
     aspect-ratio: 1;
+    display: grid;
+    place-items: center;
     border-radius: 22%;
+    background: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.softwareIcon:nth-child(6n + 1) { background: #ef6a5b; }
-.softwareIcon:nth-child(6n + 2) { background: #5b8def; }
-.softwareIcon:nth-child(6n + 3) { background: #55b98a; }
-.softwareIcon:nth-child(6n + 4) { background: #f2b84b; }
-.softwareIcon:nth-child(6n + 5) { background: #a579d2; }
-.softwareIcon:nth-child(6n) { background: #e47fac; }
+.softwareIcon img {
+    width: 76%;
+    height: 76%;
+    object-fit: contain;
+}
+
+.softwareIcon.figmaIcon {
+    aspect-ratio: 1 / 1;
+    background: #0f0f0f;
+}
+
+.softwareIcon.figmaIcon img {
+    width: 66%;
+    height: 66%;
+}
+
 
 /* RESEAUX SOCIAUX */
 .socialsBlock {
